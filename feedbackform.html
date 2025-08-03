@@ -1,0 +1,212 @@
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(49, 146, 46); /* Same green background */
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px 40px;
+      border-radius: 10px;
+      text-align: left;
+      width: 300px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Feedback for Prof. Hulk - Software Engineering</h2>
+
+  <form action="/submit" method="post">
+    <input type="hidden" name="student" value="{{ student }}">
+    <input type="hidden" name="faculty" value="{{ faculty }}">
+    <input type="hidden" name="subject" value="{{ subject }}">
+
+    <label>Q1. Clarity of teaching:</label>
+    <input type="number" name="q1" min="1" max="5" required>
+
+    <label>Q2. Engagement in class:</label>
+    <input type="number" name="q2" min="1" max="5" required>
+
+    <label>Q3. Overall satisfaction:</label>
+    <input type="number" name="q3" min="1" max="5" required>
+
+    <label>Comments:</label>
+    <textarea name="comments" rows="4" cols="50"></textarea>
+
+    <button type="submit" formaction="thanku.html">Submit Feedback</button>
+  </form>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(49, 146, 46); /* Same green background */
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px 40px;
+      border-radius: 10px;
+      text-align: left;
+      width: 320px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    select,
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Feedback Form</h2>
+
+  <form action="submit_feedback.php" method="post">
+    
+    <!-- Faculty dropdown -->
+    <label for="faculty">Faculty:</label>
+    <select name="faculty" id="faculty" required>
+      <option value="">-- Select Faculty --</option>
+      <option value="Prof. Hulk">Prof. Hulk</option>
+      <option value="Dr. Deadpool">Dr. Deadpool</option>
+      <option value="Prof. Black_Diamond">Prof. Banner</option>
+    </select>
+
+    <!-- Subject dropdown -->
+    <label for="subject">Subject:</label>
+    <select name="subject" id="subject" required>
+      <option value="">-- Select Subject --</option>
+      <option value="Software Engineering">Software Engineering</option>
+      <option value="Data Structures">Data Structures</option>
+      <option value="AI & ML">AI & ML</option>
+    </select>
+
+    <!-- Feedback questions -->
+    <label>Q1. Clarity of teaching:</label>
+    <input type="number" name="q1" min="1" max="5" required>
+
+    <label>Q2. Engagement in class:</label>
+    <input type="number" name="q2" min="1" max="5" required>
+
+    <label>Q3. Overall satisfaction:</label>
+    <input type="number" name="q3" min="1" max="5" required>
+
+    <!-- Optional comments -->
+    <label>Comments:</label>
+    <textarea name="comments" rows="4" cols="50"></textarea>
+
+    <!-- Submit -->
+    <!--<button type="submit">Submit Feedback</button>-->
+    <button onclick="window.location.href='thanku.html'">Submit Feedback</button>
+  </form>
+
+</body>
+</html>
