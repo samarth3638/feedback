@@ -22,20 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Admin Login - College Feedback System</title>
-</head>
-<body>
-  <h2>Admin Login</h2>
-  <form method="post" action="">
-    Username: <input type="text" name="username" required><br><br>
-    Password: <input type="password" name="password" required><br><br>
-    <input type="submit" value="Login">
-  </form>
-
-  <?php if (!empty($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
-    <button onclick="window.location.href='admin3.html'">Students Feedback</button>
-</body>
-</html>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(49, 146, 46); /* Matching green */
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
 
