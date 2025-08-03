@@ -35,5 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </form>
 
   <?php if (!empty($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
+    <button onclick="window.location.href='admin3.html'">Students Feedback</button>
 </body>
 </html>
+
