@@ -1,28 +1,40 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin'])) {
-    header("Location: login.php");
-    exit();
+
+// Inbuilt login credentials
+$admin_username = "admin";
+$admin_password = "admin123";
+
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+
+    if ($username === $admin_username && $password === $admin_password) {
+        $_SESSION["admin"] = $username;
+        header("Location: admin.php");
+        exit();
+    } else {
+        $error = "Invalid username or password.";
+    }
 }
-
-include "db.php";
-
-$result = $conn->query("SELECT * FROM feedback ORDER BY created_at DESC");
 ?>
 
-<h2>Feedback Received</h2>
-<a href="logout.php">Logout</a>
-<table border="1" cellpadding="5">
-    <tr><th>Name</th><th>Email</th><th>Message</th><th>Time</th></tr>
-    <?php while ($row = $result->fetch_assoc()): ?>
-        <tr>
-            <td><?= htmlspecialchars($row['name']) ?></td>
-            <td><?= htmlspecialchars($row['email']) ?></td>
-            <td><?= htmlspecialchars($row['message']) ?></td>
-            <td><?= $row['created_at'] ?></td>
-        </tr>
-    <?php endwhile; ?>
-    <!-- nav.php -->
-<a href="feedback.html">Feedback Form</a> |
-<a href="login.html">Admin Login</a>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login - College Feedback System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(49, 146, 46); /* Matching green */
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+
